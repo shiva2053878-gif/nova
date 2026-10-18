@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: nova-commerce
+  datasource:
+    url: ${NOVA_DB_URL:jdbc:mysql://localhost:3306/nova_commerce?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC}
+    username: ${NOVA_DB_USER:root}
+    password: ${NOVA_DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+server:
+  error:
+    include-message: never
